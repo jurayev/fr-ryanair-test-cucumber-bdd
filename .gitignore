@@ -1,7 +1,7 @@
 # IDEA
 .idea/*
 RainairTest.iml
-/target/
-/bin/
+/target/*
+/bin/*
 /lib
 /build
