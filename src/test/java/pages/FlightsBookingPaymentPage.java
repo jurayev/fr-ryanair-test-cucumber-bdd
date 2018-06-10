@@ -92,6 +92,7 @@ public class FlightsBookingPaymentPage extends BasePage{
     private WebElement payNowButton;
 
     public void chooseAdultTitle(String title) {
+        ExplicitWait.explicitWaitUntilElementToBeClickable(adultTitleDropdown);
         adultTitleDropdown.click();
         for(WebElement el : adultTitleList){
             if(el.getText().equalsIgnoreCase(title))
