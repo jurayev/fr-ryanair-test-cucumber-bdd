@@ -94,15 +94,15 @@ public class FlightsBookingPaymentPage extends BasePage{
     public void chooseAdultTitle(String title) {
         ExplicitWait.explicitWaitUntilElementToBeClickable(adultTitleDropdown);
         adultTitleDropdown.click();
+        ExplicitWait.explicitWaitVisibilityOfElements(adultTitleList);
         for(WebElement el : adultTitleList){
             if(el.getText().equalsIgnoreCase(title))
             {
-                ExplicitWait.explicitWait(EXPLICIT_SLEEP_TIMEOUT_MILLIS);
+                ExplicitWait.explicitWaitUntilElementToBeClickable(el);
                 el.click();
                 break;
             }
         }
-        adultTitleDropdown.click();
     }
 
     public void chooseSecondAdultTitle(String title) {
@@ -110,6 +110,7 @@ public class FlightsBookingPaymentPage extends BasePage{
         for(WebElement el : secondAdultTitleList){
             if(el.getText().equalsIgnoreCase(title))
             {
+                ExplicitWait.explicitWaitUntilElementToBeClickable(el);
                 el.click();
                 break;
             }
@@ -151,7 +152,6 @@ public class FlightsBookingPaymentPage extends BasePage{
                 break;
             }
         }
-        phoneNumberCountryDropDown.click();
     }
 
     public void fillPhoneNumber(String phoneNumber) {
