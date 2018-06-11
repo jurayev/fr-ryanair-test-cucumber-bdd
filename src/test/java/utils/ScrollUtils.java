@@ -9,13 +9,14 @@ import org.openqa.selenium.WebElement;
  */
 public class ScrollUtils {
 
+    private static JavascriptExecutor js = ((JavascriptExecutor) FactoryDriver.getInstance());
+
     public static void scrollTopWithinWebElement(WebElement webElement, int pixel){
-        ((JavascriptExecutor) FactoryDriver.getInstance()).
-                executeScript("arguments[0].scrollTop = arguments[1];",webElement, pixel);
+        js.executeScript("arguments[0].scrollTop = arguments[1];",webElement, pixel);
     }
 
     public static void scrollDown(int yOffSet){
-        ((JavascriptExecutor) FactoryDriver.getInstance()).executeScript(String.format("scroll(0,%s)", yOffSet));
+        js.executeScript(String.format("scroll(0,%s)", yOffSet));
 
     }
 
