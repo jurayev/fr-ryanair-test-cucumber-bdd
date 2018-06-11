@@ -50,6 +50,9 @@ however bdd scenario style depens on a team agreement, because again BDD is aime
 * Test launch(runners)
 * Test data(feature files)
 
+## Locators strategy
+as you can notice from page object i like css locators
+
 ## Tests support cross-platform-browser testing
  * Windows: 
       * Chrome
