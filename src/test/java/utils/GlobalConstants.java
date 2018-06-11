@@ -11,8 +11,8 @@ public abstract class GlobalConstants {
     static final String CONFIG_PROPERTIES_PATH = "src/test/resources/config.properties";
 
     public static final int PAGE_LOAD_TIMEOUT = 60;
-    public static final int IMPLICIT_WAIT_TIMEOUT = 15;
-    public static final int EXPLICIT_WAIT_TIMEOUT = 15;
+    public static final int IMPLICIT_WAIT_TIMEOUT = 30;
+    public static final int EXPLICIT_WAIT_TIMEOUT = 30;
     public static final int EXPLICIT_SLEEP_TIMEOUT_MILLIS = 1500;
 
     public static final String FIREFOX_DRIVER = "firefox_driver";

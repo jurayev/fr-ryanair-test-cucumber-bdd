@@ -74,6 +74,7 @@ public class FlightsBookingPaymentPageSteps {
         String actualErrorMsg = flightsBookingPaymentPage.getPaymentErrorTitleMessage();
         //initially I checked error message body text to verify that payment was declined due to incorrect payment details
         //however it produces different error message (smth like 'same reservation..') after each new run if I keep data static
+        //so for now decided to leave it as it is
         Assert.assertEquals(
                 String.format("Payment error title message is incorrect. \nExpected: '%s'\nActual: '%s'",expectedErrorMsg,actualErrorMsg),
                         expectedErrorMsg, actualErrorMsg

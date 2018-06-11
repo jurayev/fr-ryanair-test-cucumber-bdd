@@ -1,7 +1,7 @@
 @flights_booking
 Feature: Booking a flight on www.ryanair.com
 	As a user
-	I want to be able book a flight
+	I want to be able to book a flight
 	On www.ryanair.com
 
   Scenario: Booking up to a declined payment on
