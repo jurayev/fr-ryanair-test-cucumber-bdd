@@ -5,6 +5,9 @@ import org.apache.log4j.Logger;
 
 import static utils.GlobalConstants.BINARY_DATA_LOGGER;
 
+/**
+ * log4j logger class
+ */
 public class LogUtils {
 
     private static final Logger LOGGER = LogManager.getLogger(BINARY_DATA_LOGGER);
@@ -23,10 +26,4 @@ public class LogUtils {
         LOGGER.debug(message);
     }
 
-    /**
-     * @param message
-     */
-    public static void logError(String message) {
-        LOGGER.error(message);
-    }
 }

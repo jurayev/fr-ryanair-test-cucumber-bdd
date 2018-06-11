@@ -3,6 +3,7 @@ package driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import utils.LogUtils;
 import utils.PropertyProvider;
 
 import java.util.Objects;
@@ -57,9 +58,11 @@ public class FactoryDriver {
         switch (browser){
             case CHROME:
                 driver = createChromeDriver(platform);
+                LogUtils.logDebug("Chrome driver is created");
                 break;
             case FIREFOX:
                 driver = createFirefoxDriver(platform);
+                LogUtils.logDebug("FireFox driver is created");
                 break;
         }
         driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);

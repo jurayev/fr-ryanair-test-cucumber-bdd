@@ -3,17 +3,18 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.ExplicitWait;
+import utils.LogUtils;
 
 /***
- * This class describes FlightsSearchPage
+ * This class describes Flights Search Page
  * PageFactory is used for Page Object
- * It adds lazy initialization
+ * It adds lazy evaluation
  * which means that Page Element is initialized only when it's called by method
  * instead of instant initialization when object of page is created
  */
 public class FlightsSearchPage extends BasePage {
 
-    @FindBy(css = "span#lbl-flight-search-type-one-way")
+    @FindBy(css = "input#flight-search-type-option-one-way")
     private WebElement oneWayTrip;
 
     @FindBy(css = "div.col-departure-airport input.core-input")
@@ -49,51 +50,74 @@ public class FlightsSearchPage extends BasePage {
     private WebElement addAdultPassengerButton;
 
     @FindBy(css = "div[value='paxInput.children'] button.core-btn.inc")
-    private WebElement addChildrenPassengerButton;
+    private WebElement addChildPassengerButton;
+
+    @FindBy(css = "label.flights")
+    private WebElement flights;
 
     public void clickOneWayTrip(){
+        LogUtils.logInfo("Click 'One Way' trip");
         oneWayTrip.click();
     }
 
     public void fillDepartureAirport(String fromAirport){
+        LogUtils.logInfo(String.format("Fill departure airport '%s'", fromAirport));
+        departureAirport.clear();
         departureAirport.sendKeys(fromAirport);
     }
 
     public void fillDestinationAirport(String toAirport){
+        LogUtils.logInfo(String.format("Fill destination airport '%s'", toAirport));
+        destinationAirport.clear();
         destinationAirport.sendKeys(toAirport);
     }
 
     public void clickContinueButton(){
-        ExplicitWait.explicitWaitUntilElementToBeClickable(continueButton);
+        LogUtils.logInfo("Click 'Continue' button");
+        ExplicitWait.elementToBeClickable(continueButton);
         continueButton.click();
     }
 
     public void fillFlyOutDay(String dd){
+        LogUtils.logInfo(String.format("Fill fly out day '%s'", dd));
         flyOutDay.sendKeys(dd);
     }
+
     public void fillFlyOutMonth(String mm){
+        LogUtils.logInfo(String.format("Fill fly out month '%s'", mm));
         flyOutDay.sendKeys(mm);
     }
     public void fillFlyOutYear(String yyyy){
+        LogUtils.logInfo(String.format("Fill fly out month '%s'", yyyy));
         flyOutDay.sendKeys(yyyy);
     }
 
     public void openPassengersDropDown() {
+        LogUtils.logInfo("Open 'Passengers' dropdown");
+        ExplicitWait.elementToBeClickable(passengersDropDown);
+        passengersDropDown.click();
+    }
+
+    public void closePassengersDropDown() {
+        LogUtils.logInfo("Close 'Passengers' dropdown");
         passengersDropDown.click();
     }
 
     public void addAdultPassenger(){
-        ExplicitWait.explicitWaitVisibilityOfElement(addAdultPassengerButton);
+        LogUtils.logInfo("Add adult passenger");
+        ExplicitWait.visibilityOfElement(addAdultPassengerButton);
         addAdultPassengerButton.click();
 
     }
 
-    public void addChildrenPassenger(){
-        ExplicitWait.explicitWaitVisibilityOfElement(addChildrenPassengerButton);
-        addChildrenPassengerButton.click();
+    public void addChildPassenger(){
+        LogUtils.logInfo("Add child passenger");
+        ExplicitWait.visibilityOfElement(addChildPassengerButton);
+        addChildPassengerButton.click();
     }
 
     public void clickLetsGoButton(){
+        LogUtils.logInfo("Click 'Let's go' button");
         letsGoButton.click();
     }
 }

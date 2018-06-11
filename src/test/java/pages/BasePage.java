@@ -1,14 +1,9 @@
 package pages;
 
 import driver.FactoryDriver;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.GlobalConstants;
-import utils.LogUtils;
 
 /***
  * This class is used to initialize PageFactory elements
@@ -16,7 +11,7 @@ import utils.LogUtils;
  */
 public class BasePage {
 
-    public BasePage(){
+    protected BasePage(){
         PageFactory.initElements(FactoryDriver.getInstance(), this);
     }
 
@@ -32,10 +27,6 @@ public class BasePage {
 
     public WebElement getUserAvatar() {
         return userAvatar;
-    }
-
-    public String getCurrentUrl(){
-        return FactoryDriver.getInstance().getCurrentUrl();
     }
 
 }

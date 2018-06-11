@@ -1,5 +1,8 @@
 package model;
 
+/***
+ * This class describes User entity
+ */
 public class User {
 
     private String username;

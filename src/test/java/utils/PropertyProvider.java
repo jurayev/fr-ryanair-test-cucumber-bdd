@@ -7,6 +7,9 @@ import java.util.Properties;
 
 import static utils.GlobalConstants.CONFIG_PROPERTIES_PATH;
 
+/***
+ * This class reads properties from config property file
+ */
 public class PropertyProvider {
 
     private static Properties prop;

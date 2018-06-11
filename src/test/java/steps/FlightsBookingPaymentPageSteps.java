@@ -1,10 +1,15 @@
 package steps;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import pages.FlightsBookingPaymentPage;
+import utils.ExplicitWait;
+import utils.LogUtils;
 
+/***
+ * This class contains Booking Payment steps
+ */
 public class FlightsBookingPaymentPageSteps {
 
     private FlightsBookingPaymentPage flightsBookingPaymentPage;
@@ -13,27 +18,27 @@ public class FlightsBookingPaymentPageSteps {
         flightsBookingPaymentPage = new FlightsBookingPaymentPage();
     }
 
-    @And("^I fill in adult passenger details '([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
+    @When("^I fill in adult passenger details '([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
     public void iFillInAdultPassengerDetails(String title, String name, String lastName) {
         flightsBookingPaymentPage.chooseAdultTitle(title);
         flightsBookingPaymentPage.fillAdultName(name);
         flightsBookingPaymentPage.fillAdultLastName(lastName);
     }
 
-    @And("^I fill in second adult passenger details '([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
+    @When("^I fill in second adult passenger details '([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
     public void iFillInSecondAdultPassengerDetails(String title, String name, String lastName) {
         flightsBookingPaymentPage.chooseSecondAdultTitle(title);
         flightsBookingPaymentPage.fillSecondAdultName(name);
         flightsBookingPaymentPage.fillSecondAdultLastName(lastName);
     }
 
-    @And("^I fill in child passenger details '([^\"]*)' and '([^\"]*)'$")
+    @When("^I fill in child passenger details '([^\"]*)' and '([^\"]*)'$")
     public void iFillInChildPassengerDetails(String name, String lastName) {
         flightsBookingPaymentPage.fillThirdPassengerName(name);
         flightsBookingPaymentPage.fillThirdPassengerLastName(lastName);
     }
 
-    @And("^I fill in contact details country '([^\"]*)' and phone number '([^\"]*)'$")
+    @When("^I fill in contact details country '([^\"]*)' and phone number '([^\"]*)'$")
     public void iFillInContactDetails(String country, String phoneNumber) {
         flightsBookingPaymentPage.selectCountry(country);
         flightsBookingPaymentPage.fillPhoneNumber(phoneNumber);
@@ -49,15 +54,31 @@ public class FlightsBookingPaymentPageSteps {
         flightsBookingPaymentPage.fillCardHolderName(holderName);
     }
 
-    @And("^I fill in billing address details '([^\"]*)' and city '([^\"]*)'$")
+    @When("^I fill in billing address details '([^\"]*)' and city '([^\"]*)'$")
     public void iFillInBillingAddressDetails(String address, String city) {
         flightsBookingPaymentPage.fillAddress(address);
         flightsBookingPaymentPage.fillCity(city);
     }
 
-    @And("^I pay for booking$")
+    @When("^I pay for booking$")
     public void iPayForBooking() {
         flightsBookingPaymentPage.acceptTerms();
         flightsBookingPaymentPage.clickPayNowButton();
+    }
+
+    @Then("^I should get payment declined message$")
+    public void iGetPaymentDeclinedMessage() {
+        ExplicitWait.invisibilityOfElement(flightsBookingPaymentPage.getPlaneLoadingSpinner());
+        Assert.assertTrue("Payment error is not displayed", flightsBookingPaymentPage.getPaymentError().isDisplayed());
+        String expectedErrorMsg = FlightsBookingPaymentPage.PAYMENT_ERROR_TITLE_MESSAGE;
+        String actualErrorMsg = flightsBookingPaymentPage.getPaymentErrorTitleMessage();
+        //initially I checked error message body text to verify that payment was declined due to incorrect payment details
+        //however it produces different error message (smth like 'same reservation..') after each new run if I keep data static
+        Assert.assertEquals(
+                String.format("Payment error title message is incorrect. \nExpected: '%s'\nActual: '%s'",expectedErrorMsg,actualErrorMsg),
+                        expectedErrorMsg, actualErrorMsg
+                );
+        LogUtils.logInfo(String.format("Payment error message is '%s'", actualErrorMsg));
+
     }
 }

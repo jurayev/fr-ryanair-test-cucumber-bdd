@@ -5,6 +5,9 @@ import model.User;
 import pages.LoginPage;
 import utils.PropertyProvider;
 
+/***
+ * This class contains Login steps
+ */
 public class LoginPageSteps {
 
     @When("^I log in to personal account$")
