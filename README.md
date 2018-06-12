@@ -1,5 +1,5 @@
 # RainairTest
-This automation project automates a booking up to a declined payment on https://www.ryanair.com/ie/en/
+This project automates a booking up to a declined payment on https://www.ryanair.com/ie/en/ test scenario following BDD
 ## Using following technologies stack
 * Java 8
 * Maven - to build a project
