@@ -63,7 +63,7 @@ as you can notice from page object i like css locators
 
 Default browser is FireFox. To change browser, go to config.properties file and set 'browser_name = chrome'. Or override this property from cmd/terminal using:
 ```
-maven -Dbrowser='browser name' test
+mvn -Dbrowser='browser name' test
 ```
 ## Results reporting
 Every steps is logged by log4j. It prints all actions perfomed by user to console output and stores all logs in:
