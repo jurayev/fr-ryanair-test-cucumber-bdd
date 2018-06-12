@@ -54,7 +54,7 @@ public class FactoryDriver {
      */
     private static void createNewDriver(){
         BrowserTypes browser = BrowserTypes.valueOf(browserName.toUpperCase());
-        String platform = System.getProperty("os.name");
+        String platform = System.getProperty("os.name").toLowerCase();
         switch (browser){
             case CHROME:
                 driver = createChromeDriver(platform);
@@ -76,7 +76,7 @@ public class FactoryDriver {
      * @return ChromeDriver instance
      */
     private static ChromeDriver createChromeDriver(String platform){
-        if(platform.startsWith("Windows")) {
+        if(platform.startsWith("windows")) {
             System.setProperty(PropertyProvider.getProperty(CHROME_DRIVER), PropertyProvider.getProperty(CHROME_DRIVER_EXE_WIN));
         }else {
             System.setProperty(PropertyProvider.getProperty(CHROME_DRIVER), PropertyProvider.getProperty(CHROME_DRIVER_EXE_MAC));
@@ -84,7 +84,7 @@ public class FactoryDriver {
         return new ChromeDriver();
     }
     private static FirefoxDriver createFirefoxDriver(String platform){
-        if(platform.startsWith("Windows")) {
+        if(platform.startsWith("windows")) {
             System.setProperty(PropertyProvider.getProperty(FIREFOX_DRIVER), PropertyProvider.getProperty(FIREFOX_DRIVER_EXE_WIN));
         }else {
             System.setProperty(PropertyProvider.getProperty(FIREFOX_DRIVER), PropertyProvider.getProperty(FIREFOX_DRIVER_EXE_MAC));
