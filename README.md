@@ -16,13 +16,20 @@ Software to be pre-installed :
 note that both tools should be set to environment variables      
 ```
 ## Running autotests from IntelliJ IDEA IDE
-1. Clone this repository
+1. Clone repository
+```
+git clone https://github.com/YuriyJurayev/RainairTest
+```
 2. Open File -> New -> Project from Existing Source -> Select ../RainairTest/pom.xml -> Click 'Next' every prompt
 3. Go to RainairTest/src/test/java/test_runners/FlightsBookingTest.java -> click rmb -> click 'Run...' in context menu to execute all existing tests.
 
 ## Running autotests from command line or terminal
-1. Open directory: RainairTest/ 
-2. In command line execute:
+1. Clone repository
+```
+git clone https://github.com/YuriyJurayev/RainairTest
+```
+2. Open directory: RainairTest/ 
+3. In command line execute:
 * ```mvn test``` - exetutes all tests inside RainairTest/src/test/java/test_runners/ with default browser set in config file
 * ```mvn -Dbrowser=chrome test``` - executes test in chrome browser
 * ```mvn test -Dcucumber.options="--tags @flights_booking"``` - to run specific tags
@@ -51,7 +58,7 @@ however bdd scenario style depens on a team agreement, because again BDD is aime
 * Test data(feature files)
 
 ## Locators strategy
-as you can notice from page object i like css locators
+As you can notice from page object design I really like css locators, however I applyed different locator types such as xpath, name, id etc.
 
 ## Tests support cross-platform-browser testing
  * Windows: 
@@ -65,6 +72,8 @@ Default browser is FireFox. To change browser, go to config.properties file and 
 ```
 mvn -Dbrowser='browser name' test
 ```
+P.S. Didn't have a chance to configure and test Safari browser, however Chrome and Firefox are supported on both platforms
+
 ## Results reporting
 Every steps is logged by log4j. It prints all actions perfomed by user to console output and stores all logs in:
 ```
