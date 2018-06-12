@@ -11,7 +11,6 @@ import utils.PropertyProvider;
  */
 public class BasePageSteps {
 
-
     @Given("^I am on main page$")
     public void iAmOnMainPage()  {
         String baseUrl = PropertyProvider.getProperty("base_url");

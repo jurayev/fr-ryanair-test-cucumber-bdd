@@ -17,6 +17,7 @@ import static utils.GlobalConstants.*;
 public class FactoryDriver {
 
     private static WebDriver driver;
+
     private static String browserName;
 
     /***
@@ -83,6 +84,7 @@ public class FactoryDriver {
         }
         return new ChromeDriver();
     }
+
     private static FirefoxDriver createFirefoxDriver(String platform){
         if(platform.startsWith("windows")) {
             System.setProperty(PropertyProvider.getProperty(FIREFOX_DRIVER), PropertyProvider.getProperty(FIREFOX_DRIVER_EXE_WIN));

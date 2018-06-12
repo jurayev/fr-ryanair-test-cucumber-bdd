@@ -18,15 +18,9 @@ public class BasePage {
     @FindBy(css = "a[ui-sref='login']")
     private WebElement loginLink;
 
-    @FindBy(css = "div.avatar-user")
-    private WebElement userAvatar;
-
     public void clickLoginLinkFromMainPage() {
         loginLink.click();
     }
 
-    public WebElement getUserAvatar() {
-        return userAvatar;
-    }
 
 }
