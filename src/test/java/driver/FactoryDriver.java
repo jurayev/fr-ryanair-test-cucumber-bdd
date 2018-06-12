@@ -54,7 +54,14 @@ public class FactoryDriver {
      * This one adds cross-browser functionality to tests
      */
     private static void createNewDriver(){
-        BrowserTypes browser = BrowserTypes.valueOf(browserName.toUpperCase());
+        BrowserTypes browser;
+        try{
+            browser = BrowserTypes.valueOf(browserName.toUpperCase());
+        }catch (IllegalArgumentException e){
+            LogUtils.logError(e.getMessage());
+            LogUtils.logDebug("Set default browser: FireFox");
+            browser = BrowserTypes.FIREFOX;
+        }
         String platform = System.getProperty("os.name").toLowerCase();
         switch (browser){
             case CHROME:

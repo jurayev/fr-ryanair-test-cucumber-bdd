@@ -26,4 +26,10 @@ public class LogUtils {
         LOGGER.debug(message);
     }
 
+    /**
+     * @param message
+     */
+    public static void logError(String message) {
+        LOGGER.error(message);
+    }
 }
