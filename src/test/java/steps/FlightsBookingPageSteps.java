@@ -8,26 +8,26 @@ import pages.FlightsBookingPage;
  */
 public class FlightsBookingPageSteps {
 
-    private FlightsBookingPage flightsBookingPage;
+    private FlightsBookingPage page;
 
     public FlightsBookingPageSteps(){
-        flightsBookingPage = new FlightsBookingPage();
+        page = new FlightsBookingPage();
     }
 
     @When("^I choose a flight$")
     public void iChooseFlight() {
-       flightsBookingPage.clickTicketPriceButton();
+       page.clickTicketPriceButton();
     }
 
     @When("^I choose fare package 'Standard Fare'$")
     public void iChooseStandardFare() {
-        flightsBookingPage.clickStandardFareRadio();
+        page.clickStandardFareRadio();
 
     }
 
     @When("^I proceed by clicking Continue$")
     public void iProceedByClickingContinue() {
-        flightsBookingPage.clickContinueButton();
+        page.clickContinueButton();
     }
 
     @When("^I book available flight$")

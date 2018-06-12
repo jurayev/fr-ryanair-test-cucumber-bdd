@@ -88,7 +88,7 @@ public class FlightsSearchPage extends BasePage {
         flyOutDay.sendKeys(mm);
     }
     public void fillFlyOutYear(String yyyy){
-        LogUtils.logInfo(String.format("Fill fly out month '%s'", yyyy));
+        LogUtils.logInfo(String.format("Fill fly out year '%s'", yyyy));
         flyOutDay.sendKeys(yyyy);
     }
 

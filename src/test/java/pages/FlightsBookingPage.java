@@ -16,12 +16,6 @@ import static utils.GlobalConstants.EXPLICIT_SLEEP_TIMEOUT_MILLIS;
  */
 public class FlightsBookingPage extends BasePage {
 
-    public static final String URL = "/booking/home";
-
-    public WebElement getActiveFare() {
-        return activeFare;
-    }
-
     @FindBy(css = "div.slide.active")
     private WebElement activeFare;
 

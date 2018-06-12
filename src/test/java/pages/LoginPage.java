@@ -4,6 +4,7 @@ import model.User;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.ExplicitWait;
+import utils.LogUtils;
 
 import static utils.GlobalConstants.EXPLICIT_SLEEP_TIMEOUT_MILLIS;
 
@@ -26,8 +27,12 @@ public class LoginPage extends BasePage{
     private WebElement loginButton;
 
     public void logIn(User user){
-        email.sendKeys(user.getUsername());
+        String username = user.getUsername();
+        LogUtils.logInfo(String.format("Fill 'Email address' with '%s'", username));
+        email.sendKeys(username);
+        LogUtils.logInfo("Fill 'Password' with '***********'");
         password.sendKeys(user.getPassword());
+        LogUtils.logInfo("Click 'Log in' button");
         loginButton.click();
         ExplicitWait.sleep(EXPLICIT_SLEEP_TIMEOUT_MILLIS);
     }

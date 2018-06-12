@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBys;
 import utils.ExplicitWait;
 import utils.LogUtils;
 import utils.ScrollUtils;
-
 import java.util.List;
 
 import static utils.GlobalConstants.EXPLICIT_SLEEP_TIMEOUT_MILLIS;
@@ -178,7 +177,7 @@ public class FlightsBookingPaymentPage extends BasePage{
     }
 
     public void fillThirdPassengerLastName(String lastName) {
-        LogUtils.logInfo(String.format("Fill 'Surname' whit '%s'", lastName));
+        LogUtils.logInfo(String.format("Fill 'Surname' with '%s'", lastName));
         thirdPassengerLastName.sendKeys(lastName);
     }
 
@@ -243,7 +242,7 @@ public class FlightsBookingPaymentPage extends BasePage{
         for(WebElement el : expiryMonthDropDownList){
             if(el.getText().equalsIgnoreCase(month))
             {
-                LogUtils.logInfo(String.format("Choose '%s' card type", month));
+                LogUtils.logInfo(String.format("Choose '%s' month", month));
                 el.click();
                 break;
             }
@@ -261,7 +260,7 @@ public class FlightsBookingPaymentPage extends BasePage{
         for(WebElement el : expiryYearDropDownList){
             if(el.getText().equalsIgnoreCase(year))
             {
-                LogUtils.logInfo(String.format("Choose '%s' card type", year));
+                LogUtils.logInfo(String.format("Choose '%s' year", year));
                 el.click();
                 break;
             }

@@ -12,66 +12,66 @@ import utils.LogUtils;
  */
 public class FlightsBookingPaymentPageSteps {
 
-    private FlightsBookingPaymentPage flightsBookingPaymentPage;
+    private FlightsBookingPaymentPage page;
 
     public FlightsBookingPaymentPageSteps(){
-        flightsBookingPaymentPage = new FlightsBookingPaymentPage();
+        page = new FlightsBookingPaymentPage();
     }
 
     @When("^I fill in adult passenger details '([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
     public void iFillInAdultPassengerDetails(String title, String name, String lastName) {
-        flightsBookingPaymentPage.chooseAdultTitle(title);
-        flightsBookingPaymentPage.fillAdultName(name);
-        flightsBookingPaymentPage.fillAdultLastName(lastName);
+        page.chooseAdultTitle(title);
+        page.fillAdultName(name);
+        page.fillAdultLastName(lastName);
     }
 
     @When("^I fill in second adult passenger details '([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
     public void iFillInSecondAdultPassengerDetails(String title, String name, String lastName) {
-        flightsBookingPaymentPage.chooseSecondAdultTitle(title);
-        flightsBookingPaymentPage.fillSecondAdultName(name);
-        flightsBookingPaymentPage.fillSecondAdultLastName(lastName);
+        page.chooseSecondAdultTitle(title);
+        page.fillSecondAdultName(name);
+        page.fillSecondAdultLastName(lastName);
     }
 
     @When("^I fill in child passenger details '([^\"]*)' and '([^\"]*)'$")
     public void iFillInChildPassengerDetails(String name, String lastName) {
-        flightsBookingPaymentPage.fillThirdPassengerName(name);
-        flightsBookingPaymentPage.fillThirdPassengerLastName(lastName);
+        page.fillThirdPassengerName(name);
+        page.fillThirdPassengerLastName(lastName);
     }
 
     @When("^I fill in contact details country '([^\"]*)' and phone number '([^\"]*)'$")
     public void iFillInContactDetails(String country, String phoneNumber) {
-        flightsBookingPaymentPage.selectCountry(country);
-        flightsBookingPaymentPage.fillPhoneNumber(phoneNumber);
+        page.selectCountry(country);
+        page.fillPhoneNumber(phoneNumber);
     }
 
     @When("^I fill in card details '([^\"]*)', '([^\"]*)', '([^\"]*)'/'([^\"]*)', '([^\"]*)' and '([^\"]*)'$")
     public void iFillInCardDetailsVisaAndJohnSmith(String cardNumber, String cardType, String month, String year, String code, String holderName) {
-        flightsBookingPaymentPage.fillCardNumber(cardNumber);
-        flightsBookingPaymentPage.chooseCardType(cardType);
-        flightsBookingPaymentPage.chooseExpiryMonth(month);
-        flightsBookingPaymentPage.chooseExpiryYear(year);
-        flightsBookingPaymentPage.fillSecurityCode(code);
-        flightsBookingPaymentPage.fillCardHolderName(holderName);
+        page.fillCardNumber(cardNumber);
+        page.chooseCardType(cardType);
+        page.chooseExpiryMonth(month);
+        page.chooseExpiryYear(year);
+        page.fillSecurityCode(code);
+        page.fillCardHolderName(holderName);
     }
 
     @When("^I fill in billing address details '([^\"]*)' and city '([^\"]*)'$")
     public void iFillInBillingAddressDetails(String address, String city) {
-        flightsBookingPaymentPage.fillAddress(address);
-        flightsBookingPaymentPage.fillCity(city);
+        page.fillAddress(address);
+        page.fillCity(city);
     }
 
     @When("^I pay for booking$")
     public void iPayForBooking() {
-        flightsBookingPaymentPage.acceptTerms();
-        flightsBookingPaymentPage.clickPayNowButton();
+        page.acceptTerms();
+        page.clickPayNowButton();
     }
 
     @Then("^I should get payment declined message$")
     public void iGetPaymentDeclinedMessage() {
-        ExplicitWait.invisibilityOfElement(flightsBookingPaymentPage.getPlaneLoadingSpinner());
-        Assert.assertTrue("Payment error is not displayed", flightsBookingPaymentPage.getPaymentError().isDisplayed());
+        ExplicitWait.invisibilityOfElement(page.getPlaneLoadingSpinner());
+        Assert.assertTrue("Payment error is not displayed", page.getPaymentError().isDisplayed());
         String expectedErrorMsg = FlightsBookingPaymentPage.PAYMENT_ERROR_TITLE_MESSAGE;
-        String actualErrorMsg = flightsBookingPaymentPage.getPaymentErrorTitleMessage();
+        String actualErrorMsg = page.getPaymentErrorTitleMessage();
         //initially I checked error message body text to verify that payment was declined due to incorrect payment details
         //however it produces different error message (smth like 'same reservation..') after each new run if I keep data static
         //so for now decided to leave it as it is

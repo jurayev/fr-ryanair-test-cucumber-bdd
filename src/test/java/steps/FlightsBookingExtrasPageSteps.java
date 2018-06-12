@@ -8,14 +8,8 @@ import pages.FlightsBookingExtrasPage;
  */
 public class FlightsBookingExtrasPageSteps {
 
-    private FlightsBookingExtrasPage flightsBookingExtrasPage;
-
-    public FlightsBookingExtrasPageSteps(){
-        flightsBookingExtrasPage = new FlightsBookingExtrasPage();
-    }
-
     @When("^I checkout my booking$")
     public void iCheckoutMyBooking() {
-        flightsBookingExtrasPage.clickCheckOutButton();
+        new FlightsBookingExtrasPage().clickCheckOutButton();
     }
 }

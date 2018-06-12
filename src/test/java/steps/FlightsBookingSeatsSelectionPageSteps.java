@@ -8,19 +8,13 @@ import pages.FlightsBookingSeatsSelectionPage;
  */
 public class FlightsBookingSeatsSelectionPageSteps {
 
-    private FlightsBookingSeatsSelectionPage flightsBookingSeatsSelectionPage;
-
-    public FlightsBookingSeatsSelectionPageSteps(){
-        flightsBookingSeatsSelectionPage = new FlightsBookingSeatsSelectionPage();
-    }
-
-
     @When("^I select seats for (\\d+) passengers$")
     public void iSelectSeatsForPassengers(int numberOfSeats) {
-        flightsBookingSeatsSelectionPage.clickSelectSeatsConfirmButton();
-        flightsBookingSeatsSelectionPage.selectSeats(numberOfSeats);
-        flightsBookingSeatsSelectionPage.clickReviewSeatsButton();
-        flightsBookingSeatsSelectionPage.clickConfirmButton();
-        flightsBookingSeatsSelectionPage.declineBagsPriority();
+        FlightsBookingSeatsSelectionPage page = new FlightsBookingSeatsSelectionPage();
+        page.clickSelectSeatsConfirmButton();
+        page.selectSeats(numberOfSeats);
+        page.clickReviewSeatsButton();
+        page.clickConfirmButton();
+        page.declineBagsPriority();
     }
 }

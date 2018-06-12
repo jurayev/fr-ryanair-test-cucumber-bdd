@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBys;
 import utils.ExplicitWait;
 import utils.LogUtils;
 import utils.ScrollUtils;
-
 import java.util.List;
 
 /***
@@ -47,6 +46,7 @@ public class FlightsBookingSeatsSelectionPage extends BasePage{
      */
     public void selectSeats(int numberOfSeats){
         ExplicitWait.visibilityOfElements(selectSeatButtonList);
+        LogUtils.logInfo("Scroll top seat map page");
         ScrollUtils.scrollTopWithinWebElement(seatMap, 100);
         for(int i=0; i<numberOfSeats; i++){
             LogUtils.logInfo("Select seat for passenger");
