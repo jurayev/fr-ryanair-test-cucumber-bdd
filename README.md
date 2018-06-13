@@ -70,7 +70,7 @@ As you can notice from page object design I really like css locators, however I 
 
 Default browser is FireFox. To change browser, go to config.properties file and set 'browser_name = chrome'. Or override this property from cmd/terminal using:
 ```
-mvn -Dbrowser='browser name' test
+mvn -Dbrowser=browser_name test
 ```
 P.S. Didn't have a chance to configure and test Safari browser, however Chrome and Firefox are supported on both platforms
 
