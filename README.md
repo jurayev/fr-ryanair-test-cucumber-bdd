@@ -1,4 +1,4 @@
-# RainairTest
+# Ryanair Test BDD
 This project automates a booking up to a declined payment on https://www.ryanair.com/ie/en/ test scenario following BDD
 ## Using following technologies stack
 * Java 8
@@ -75,7 +75,7 @@ mvn -Dbrowser=browser_name test
 P.S. Didn't have a chance to configure and test Safari browser, however Chrome and Firefox are supported on both platforms
 
 ## Results reporting
-Every steps is logged by log4j. It prints all actions perfomed by user to console output and stores all logs in:
+Every step is logged by log4j. It prints all actions perfomed by user to console output and stores all logs in:
 ```
 RainairTest/target/logs      
 ```
