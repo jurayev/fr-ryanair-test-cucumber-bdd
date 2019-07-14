@@ -1,12 +1,26 @@
-# Ryanair Test BDD
-This project automates a booking up to a declined payment on https://www.ryanair.com/ie/en/ test scenario following BDD
-## Using following technologies stack
-* Java 8
-* Maven - to build a project
-* JUnit - to run automation tests
-* Cucumber - to use BDD
-* Cucumber html reporter plugin
-* Log4j - for logging
+# Ryanair Test Automation Framework
+This project automates a booking up to a declined payment on https://www.ryanair.com/ie/en/ test scenario
+
+## Table of Contents
+* [Tech Stack](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#tech-stack-used)
+* [Getting Started](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#getting-started)
+* [Running from IntelliJ IDEA](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-IntelliJ-IDEA-IDE)
+* [Running from command line](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-command-line-or-terminal)
+* [BDD](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#bdd)
+* [Framework Structure](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#framework-structure)
+* [Test Layers](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#test-layers)
+* [Supported Browsers](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#tests-support-cross-platform-browser-testing)
+* [Results Reporting](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#results-reporting)
+* [Code Design](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#code-design)
+* [License](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#license)
+
+## Tech Stack used
+* Java 8 - coding
+* Maven - project builder
+* JUnit - runner
+* Cucumber - BDD framework
+* Cucumber html reporter plugin - test outcome reporter
+* Log4j - logger
   
 ## Getting Started  
 Software to be pre-installed : 
@@ -18,7 +32,7 @@ note that both tools should be set to environment variables
 ## Running autotests from IntelliJ IDEA IDE
 1. Clone repository
 ```
-git clone https://github.com/YuriyJurayev/RainairTest
+git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
 ```
 2. Open File -> New -> Project from Existing Source -> Select ../RainairTest/pom.xml -> Click 'Next' every prompt
 3. Go to RainairTest/src/test/java/test_runners/FlightsBookingTest.java -> click rmb -> click 'Run...' in context menu to execute all existing tests.
@@ -26,7 +40,7 @@ git clone https://github.com/YuriyJurayev/RainairTest
 ## Running autotests from command line or terminal
 1. Clone repository
 ```
-git clone https://github.com/YuriyJurayev/RainairTest
+git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
 ```
 2. Open directory: RainairTest/ 
 3. In command line execute:
@@ -35,13 +49,10 @@ git clone https://github.com/YuriyJurayev/RainairTest
 * ```mvn test -Dcucumber.options="--tags @flights_booking"``` - to run specific tags
 
 ## BDD
-Tests are developed using BDD approach, which brings benefits of using DSL specification stories called 'Features', so basically it's aimed to write human-readable scenarios to involve non-technical people in process of automation
-```
-btw I prefer writing low level scenario steps(as I did in this project) to make them independent, reusable and relaible as much as I can
-however bdd scenario style depens on a team agreement, because again BDD is aimed to cover the whole team needs,not only for automation engineers 
-```
-## Framework structure
-* Programming lang – Java 8
+Tests are developed using BDD approach, thanks to extremely powerfull Cucumber framework, which brings benefits of using DSL specification stories called 'Features', so basically it's aimed to write human-readable scenarios to involve non-technical people in process of automation
+
+## Framework Structure
+* Programming language – Java 8
 * Type of framework – BDD
 * Page Object – Separate class for every web-page, that hold all functionality and members of that web-page using PageFactory pattern
 * Test base class: Deals with all the common functions used by all the pages, responsible for test launch, for reports,pre-cond post-cond, web-driver init, loading configs etc. 
@@ -51,16 +62,13 @@ however bdd scenario style depens on a team agreement, because again BDD is aime
 * Test Data: Is stored in resources and passed through feature file scenarios
 * VCS: Git
 
-## Test layers
+## Test Layers
 * Pages(web-pages and elements)
 * Test steps(logic implementation)
 * Test launch(runners)
 * Test data(feature files)
 
-## Locators strategy
-As you can notice from page object design I really like css locators, however I applyed different locator types such as xpath, name, id etc.
-
-## Tests support cross-platform-browser testing
+## Tests support cross-platform browser testing
  * Windows: 
       * Chrome
       * FireFox
@@ -75,17 +83,22 @@ mvn -Dbrowser=browser_name test
 P.S. Didn't have a chance to configure and test Safari browser, however Chrome and Firefox are supported on both platforms
 
 ## Results reporting
-Every step is logged by log4j. It prints all actions perfomed by user to console output and stores all logs in:
+Every step is logged by log4j. It prints all actions perfomed by scripts to console output and stores all logs in:
 ```
-RainairTest/target/logs      
+fr-ryanair-test-cucumber-bdd/target/logs      
 ```
-Cucumber genarates simple html reports using html-report-plugin.To browse cucumber reports, go to:
+Cucumber genarates simple html reports using html-report-plugin. To browse cucumber reports, go to:
 ```
-RainairTest/target/cucumber-reports/***Test      
+fr-ryanair-test-cucumber-bdd/target/cucumber-reports/***Test      
 ```
-Find a file with extension *** .html and open in any browser
+Open a file with extension ```*****.html``` in any preferrable browser
 
 P.S. There are many opportunities to add any other convenient reporter tool to this project
 
 ## Code design
- For more detailed information about code design, please refer to in-code documentation
+The project follows [Google Java](https://google.github.io/styleguide/javaguide.html) code style guide
+
+For more detailed information about code design, please refer to in-code documentation
+
+## License
+The project is licensed under [Apache License 2.0](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd/blob/master/LICENSE)
