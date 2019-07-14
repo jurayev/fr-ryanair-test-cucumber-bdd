@@ -82,7 +82,7 @@ mvn -Dbrowser=browser_name test
 ```
 P.S. Didn't have a chance to configure and test Safari browser, however Chrome and Firefox are supported on both platforms
 
-## Results reporting
+## Results Reporting
 Every step is logged by log4j. It prints all actions perfomed by scripts to console output and stores all logs in:
 ```
 fr-ryanair-test-cucumber-bdd/target/logs      
@@ -95,7 +95,7 @@ Open a file with extension ```*****.html``` in any preferrable browser
 
 P.S. There are many opportunities to add any other convenient reporter tool to this project
 
-## Code design
+## Code Design
 The project follows [Google Java](https://google.github.io/styleguide/javaguide.html) code style guide
 
 For more detailed information about code design, please refer to in-code documentation
