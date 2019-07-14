@@ -96,9 +96,9 @@ Open a file with extension ```*****.html``` in any preferrable browser
 P.S. There are many opportunities to add any other convenient reporter tool to this project
 
 ## Code Design
-The project follows [Google Java](https://google.github.io/styleguide/javaguide.html) code style guide
+Project follows [Google Java](https://google.github.io/styleguide/javaguide.html) code style guide
 
 For more detailed information about code design, please refer to in-code documentation
 
 ## License
-The project is licensed under [Apache License 2.0](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd/blob/master/LICENSE)
+Project is licensed under [MIT](https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd/blob/master/LICENSE.md)
