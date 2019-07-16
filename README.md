@@ -3,16 +3,16 @@ This project automates a booking up to a declined payment on https://www.ryanair
 
 ## Table of Contents
 * [Tech Stack](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#tech-stack-used)
-* [Getting Started](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#getting-started)
-* [Running from IntelliJ IDEA](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-IntelliJ-IDEA-IDE)
-* [Running from command line](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-command-line-or-terminal)
-* [BDD](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#bdd)
-* [Framework Structure](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#framework-structure)
-* [Test Layers](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#test-layers)
-* [Supported Browsers](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#tests-support-cross-platform-browser-testing)
-* [Results Reporting](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#results-reporting)
-* [Code Design](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#code-design)
-* [License](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#license)
+* [Getting Started](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#getting-started)
+* [Running from IntelliJ IDEA](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-IntelliJ-IDEA-IDE)
+* [Running from command line](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-command-line-or-terminal)
+* [BDD](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#bdd)
+* [Framework Structure](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#framework-structure)
+* [Test Layers](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#test-layers)
+* [Supported Browsers](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#tests-support-cross-platform-browser-testing)
+* [Results Reporting](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#results-reporting)
+* [Code Design](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#code-design)
+* [License](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#license)
 
 ## Tech Stack used
 * Java 8 - coding
