@@ -2,17 +2,17 @@
 This project automates a booking up to a declined payment on https://www.ryanair.com/ie/en/ test scenario
 
 ## Table of Contents
-* [Tech Stack](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#tech-stack-used)
-* [Getting Started](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#getting-started)
-* [Running from IntelliJ IDEA](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-IntelliJ-IDEA-IDE)
-* [Running from command line](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-command-line-or-terminal)
-* [BDD](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#bdd)
-* [Framework Structure](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#framework-structure)
-* [Test Layers](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#test-layers)
-* [Supported Browsers](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#tests-support-cross-platform-browser-testing)
-* [Results Reporting](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#results-reporting)
-* [Code Design](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#code-design)
-* [License](https://github.com/YuriyJurayev/fr_ryanair_test_cucumber_bdd#license)
+* [Tech Stack](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#tech-stack-used)
+* [Getting Started](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#getting-started)
+* [Running from IntelliJ IDEA](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-IntelliJ-IDEA-IDE)
+* [Running from command line](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#running-autotests-from-command-line-or-terminal)
+* [BDD](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#bdd)
+* [Framework Structure](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#framework-structure)
+* [Test Layers](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#test-layers)
+* [Supported Browsers](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#tests-support-cross-platform-browser-testing)
+* [Results Reporting](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#results-reporting)
+* [Code Design](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#code-design)
+* [License](https://github.com/jurayev/fr_ryanair_test_cucumber_bdd#license)
 
 ## Tech Stack used
 * Java 8 - coding
@@ -32,7 +32,7 @@ note that both tools should be set to environment variables
 ## Running autotests from IntelliJ IDEA IDE
 1. Clone repository
 ```
-git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
+git clone https://github.com/jurayev/fr-ryanair-test-cucumber-bdd
 ```
 2. Open File -> New -> Project from Existing Source -> Select `../fr-ryanair-test-cucumber-bdd/pom.xml` -> Click 'Next' every prompt
 3. Go to `fr-ryanair-test-cucumber-bdd/src/test/java/test_runners/FlightsBookingTest.java` -> click rmb -> click 'Run...' in context menu to execute all existing tests.
@@ -40,7 +40,7 @@ git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
 ## Running autotests from command line or terminal
 1. Clone repository
 ```
-git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
+git clone https://github.com/jurayev/fr-ryanair-test-cucumber-bdd
 ```
 2. Open directory: `fr-ryanair-test-cucumber-bdd/` 
 3. In command line execute:
@@ -101,4 +101,4 @@ Project follows [Google Java](https://google.github.io/styleguide/javaguide.html
 For more detailed information about code design, please refer to in-code documentation
 
 ## License
-Project is licensed under [MIT](https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd/blob/master/LICENSE.md)
+Project is licensed under [MIT](https://github.com/jurayev/fr-ryanair-test-cucumber-bdd/blob/master/LICENSE.md)
