@@ -34,17 +34,17 @@ note that both tools should be set to environment variables
 ```
 git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
 ```
-2. Open File -> New -> Project from Existing Source -> Select ../RainairTest/pom.xml -> Click 'Next' every prompt
-3. Go to RainairTest/src/test/java/test_runners/FlightsBookingTest.java -> click rmb -> click 'Run...' in context menu to execute all existing tests.
+2. Open File -> New -> Project from Existing Source -> Select `../fr-ryanair-test-cucumber-bdd/pom.xml` -> Click 'Next' every prompt
+3. Go to `fr-ryanair-test-cucumber-bdd/src/test/java/test_runners/FlightsBookingTest.java` -> click rmb -> click 'Run...' in context menu to execute all existing tests.
 
 ## Running autotests from command line or terminal
 1. Clone repository
 ```
 git clone https://github.com/YuriyJurayev/fr-ryanair-test-cucumber-bdd
 ```
-2. Open directory: RainairTest/ 
+2. Open directory: `fr-ryanair-test-cucumber-bdd/` 
 3. In command line execute:
-* ```mvn test``` - exetutes all tests inside RainairTest/src/test/java/test_runners/ with default browser set in config file
+* ```mvn test``` - exetutes all tests inside `fr-ryanair-test-cucumber-bdd/src/test/java/test_runners/` with default browser set in config file
 * ```mvn -Dbrowser=chrome test``` - executes test in chrome browser
 * ```mvn test -Dcucumber.options="--tags @flights_booking"``` - to run specific tags
 
